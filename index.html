@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auxmatica | Apps for Experiences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#22d3ee',
+                            purple: '#a855f7',
+                            pink: '#f472b6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom background gradient effects */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(15,23,42,0) 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .bg-glow-2 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(34,211,238,0.1) 0%, rgba(15,23,42,0) 70%);
+            bottom: -200px;
+            left: -200px;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-50 font-sans antialiased selection:bg-purple-500/30 relative overflow-x-hidden">
+    
+    <!-- Background Accents -->
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 z-50 relative">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-purple"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <span class="text-2xl font-bold tracking-tighter">Auxmatica</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#work" class="hover:text-white transition-colors">Work</a>
+                <a href="#about" class="hover:text-white transition-colors">Philosophy</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/5 transition-all text-white">Let's Talk</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white z-50 relative">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl z-40 flex flex-col justify-center items-center gap-8 text-2xl font-semibold opacity-0 pointer-events-none transition-opacity duration-300">
+            <a href="#services" class="mobile-link text-slate-300 hover:text-brand-cyan transition-colors">Services</a>
+            <a href="#work" class="mobile-link text-slate-300 hover:text-brand-purple transition-colors">Work</a>
+            <a href="#about" class="mobile-link text-slate-300 hover:text-brand-pink transition-colors">Philosophy</a>
+            <a href="#contact" class="mobile-link text-white px-8 py-3 rounded-full bg-gradient-to-r from-brand-purple to-brand-cyan mt-4">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-slate-300 mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+                Digital Realities Await
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-tight max-w-5xl">
+                Engineering <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-purple to-brand-pink">
+                    Unforgettable
+                </span><br/> 
+                Experiences.
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed">
+                We build immersive, interactive, and seamless mobile applications that bridge the gap between digital innovation and the physical world.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="#contact" class="px-8 py-4 rounded-full bg-white text-slate-950 font-bold hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 group">
+                    Start Your Journey
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="#work" class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-colors flex items-center justify-center">
+                    Explore Our Work
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 md:py-32 relative z-10 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="mb-16 md:mb-24">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">What We Do</h2>
+                <p class="text-slate-400 text-lg max-w-3xl leading-relaxed">
+                    At Auxmatica, we believe an app shouldn't just be a tool—it should be an experience. Whether you're hosting a massive music festival, designing a retail pop-up, or building an augmented reality art exhibit, our apps serve as the digital heartbeat of your physical event.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-cyan/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-cyan"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Experiential App Dev</h3>
+                    <p class="text-slate-400 leading-relaxed">Custom iOS and Android apps designed to guide, entertain, and engage users during live events and physical spaces.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-purple/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-purple"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Immersive Tech Integration</h3>
+                    <p class="text-slate-400 leading-relaxed">Incorporating AR (Augmented Reality), location-based triggers, and interactive maps to elevate the user journey.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-pink/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-pink"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Real-Time Analytics</h3>
+                    <p class="text-slate-400 leading-relaxed">Dashboards that show you exactly how your audience is interacting with your experience in the moment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-24 md:py-32 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex justify-between items-end mb-16 md:mb-24">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Featured Experiences</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl">A glimpse into the digital environments we've crafted for world-class physical events.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-3xl bg-slate-900 border border-white/10">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80" alt="Neon Nights Festival" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex flex-col justify-end p-8">
+                        <span class="text-brand-cyan text-sm font-bold tracking-wider uppercase mb-2">Music & Entertainment</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Neon Nights Festival</h3>
+                        <p class="text-slate-300 text-sm line-clamp-2">A companion app featuring AR stage maps, real-time artist alerts, and friend-finding beacons.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-3xl bg-slate-900 border border-white/10">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1554902843-260acd0993f8?auto=format&fit=crop&w=800&q=80" alt="Horizon Art Space" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex flex-col justify-end p-8">
+                        <span class="text-brand-purple text-sm font-bold tracking-wider uppercase mb-2">Interactive Exhibition</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Horizon Art Space</h3>
+                        <p class="text-slate-300 text-sm line-clamp-2">An audio-visual guide that changes dynamically based on the user's proximity to specific installations.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-3xl bg-slate-900 border border-white/10">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?auto=format&fit=crop&w=800&q=80" alt="Lumina Pop-Up" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex flex-col justify-end p-8">
+                        <span class="text-brand-pink text-sm font-bold tracking-wider uppercase mb-2">Retail Experience</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Lumina Pop-Up</h3>
+                        <p class="text-slate-300 text-sm line-clamp-2">Gamified shopping experience where users unlocked exclusive merchandise drops by exploring the physical store.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy / About -->
+    <section id="about" class="py-24 md:py-32 relative z-10 bg-slate-900/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-16 items-center">
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Bridging Physical and Digital.</h2>
+                <p class="text-slate-400 text-lg mb-6 leading-relaxed">
+                    We started Auxmatica because we noticed a disconnect. Live events were incredible, but the digital tools supporting them were clunky, distracting, and disconnected from the environment.
+                </p>
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                    Our philosophy is simple: Technology should enhance your presence in the real world, not pull you out of it. We build systems that are intuitive, beautiful, and hyper-aware of their surroundings.
+                </p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-4xl font-extrabold text-white mb-2">50+</h4>
+                        <span class="text-slate-500 text-sm uppercase tracking-wider font-bold">Experiences Launched</span>
+                    </div>
+                    <div>
+                        <h4 class="text-4xl font-extrabold text-white mb-2">2M+</h4>
+                        <span class="text-slate-500 text-sm uppercase tracking-wider font-bold">Active Users</span>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-brand-purple to-brand-cyan rounded-3xl transform rotate-3 opacity-50 blur-xl"></div>
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team at work" class="relative rounded-3xl border border-white/10 shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 relative z-10">
+        <div class="max-w-3xl mx-auto px-6 md:px-12 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Ready to build something extraordinary?</h2>
+            <p class="text-slate-400 text-lg mb-12">Let's turn your next big idea into an immersive digital reality.</p>
+            
+            <form id="contact-form" class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 text-left relative overflow-hidden">
+                <div id="form-success" class="absolute inset-0 bg-slate-900 flex flex-col items-center justify-center text-center px-8 z-20 hidden transition-opacity duration-300">
+                    <div class="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Message Received</h3>
+                    <p class="text-slate-400">We'll be in touch with you shortly to discuss your experience.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-400 mb-2">Name</label>
+                        <input type="text" id="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-400 mb-2">Email</label>
+                        <input type="email" id="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all">
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <label for="message" class="block text-sm font-medium text-slate-400 mb-2">Tell us about your project</label>
+                    <textarea id="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all"></textarea>
+                </div>
+                <button type="submit" id="submit-btn" class="w-full bg-white text-slate-950 font-bold text-lg py-4 rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
+                    <span>Send Message</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 bg-slate-950 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-purple"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <span class="text-xl font-bold tracking-tighter">Auxmatica</span>
+            </div>
+            <p class="text-slate-500 text-sm text-center md:text-left">
+                © <script>document.write(new Date().getFullYear())</script> Auxmatica. All rights reserved.
+            </p>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-500 hover:text-white transition-colors">Twitter</a>
+                <a href="#" class="text-slate-500 hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="text-slate-500 hover:text-white transition-colors">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-slate-950/80', 'backdrop-blur-md', 'border-white/10');
+                navbar.classList.remove('bg-transparent', 'border-transparent');
+            } else {
+                navbar.classList.remove('bg-slate-950/80', 'backdrop-blur-md', 'border-white/10');
+                navbar.classList.add('bg-transparent', 'border-transparent');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isOpen = !mobileMenu.classList.contains('opacity-0');
+            
+            if (isOpen) {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            } else {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Form Submission Simulation
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const formSuccess = document.getElementById('form-success');
+        const btnText = submitBtn.querySelector('span');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Loading state
+            btnText.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+            // Simulate API call
+            setTimeout(() => {
+                formSuccess.classList.remove('hidden');
+                formSuccess.classList.add('opacity-100');
+                
+                // Reset form after delay
+                setTimeout(() => {
+                    contactForm.reset();
+                    formSuccess.classList.add('hidden');
+                    formSuccess.classList.remove('opacity-100');
+                    btnText.textContent = 'Send Message';
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                }, 4000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
